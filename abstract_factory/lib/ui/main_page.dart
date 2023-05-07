@@ -1,5 +1,5 @@
-import 'package:abstract_factory/concrete_factory/conrete_factory.dart';
-import 'package:abstract_factory/widget/custom_button/custom_button.dart';
+import 'package:abstract_factory/comcrete_factory/concrete_factory.dart';
+import 'package:abstract_factory/custom_button/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatelessWidget {
@@ -11,13 +11,17 @@ class MainPage extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: const [
             CustomButton(
-              widgetFactory: ConcreteFactory(buttonType: ButtonType.outline),
+              buttonType: ButtonType.outline,
+              textColor: Colors.green,
+              borderColor: Colors.green,
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20),
             CustomButton(
-              widgetFactory: ConcreteFactory(buttonType: ButtonType.fill),
+              buttonType: ButtonType.fill,
+              textColor: Colors.white,
+              backgoundColor: Colors.green,
             )
           ],
         ),
